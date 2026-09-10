@@ -15,7 +15,7 @@ Python 3.13+ will be used for the AI model to leverage existing AI ecosystems.
 
 The language seperation allows the game engine to be re-written in C++ or Rust if the Java engine proves to be a bottleneck
 
-## Neglected Alternatives
+## Rejected Alternatives
 Pure python was rejected because the engine would slow down training speeds.
 Pure Java was rejected because of the limited AI ecosystem in java.
 C++ or Rust was deffered because Java allows for faster intial development.
