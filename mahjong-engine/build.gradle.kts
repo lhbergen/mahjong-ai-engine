@@ -1,0 +1,27 @@
+plugins {
+    id("java")
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(platform("org.junit:junit-bom:5.10.0"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    testImplementation("org.junit.platform:junit-platform-suite-api")
+    testRuntimeOnly("org.junit.platform:junit-platform-suite-engine")
+
+    testImplementation("io.cucumber:cucumber-picocontainer:7.21.1")
+    testImplementation("io.cucumber:cucumber-java:7.21.1")
+    testImplementation("io.cucumber:cucumber-junit-platform-engine:7.21.1")
+}
+
+tasks.test {
+    useJUnitPlatform()
+}
