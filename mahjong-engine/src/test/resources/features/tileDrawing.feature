@@ -20,7 +20,7 @@ Feature: Players drawing tiles
     And a player named Bob
     And it is Bob's turn to draw
     When Bob draws
-    Then an IllegalMove error is thrown saying "Error: Drew When Wall is empty"
+    Then an IllegalMove error is thrown saying "Error: Bob drew when Wall is empty"
 
   Scenario: Tiles are available from the wall but cannot be drawn because it is not Bob's turn
     Given a wall with 1 tile
@@ -28,7 +28,14 @@ Feature: Players drawing tiles
     And a player named Alice
     And it is Alice's turn to draw
     When Bob draws
-    Then an IllegalMove error is thrown saying "Error: Drew out of turn"
+    Then an IllegalMove error is thrown saying "Error: Bob drew during Alice's turn"
+
+  Scenario: Tiles are available from the wall but cannot be drawn because it is not Bob's turn
+    Given a wall with 1 tile
+    And a player named Bob
+    And it is Bob's turn to discard
+    When Bob draws
+    Then an IllegalMove error is thrown saying "Error: Bob drew during discard phase"
 
   Scenario: Tiles are available from the wall but cannot be drawn because the player has 14 tiles
     Given a wall with 1 tile
@@ -36,4 +43,4 @@ Feature: Players drawing tiles
     And Bob has 14 tiles
     And it is Bob's turn to draw
     When Bob draws
-    Then an IllegalMove error is thrown saying "Error: Drew past 14"
+    Then an IllegalMove error is thrown saying "Error: Bob drew past 14 tiles"
