@@ -7,8 +7,7 @@ Feature: Players discarding tiles
     - The player has 13 tiles
 
   Scenario: Tiles are available in the player's hand and can be discarded
-    Given a discard with 0 tiles
-    And a player named Bob
+    Given a player named Bob
     And Bob's hand has 14 tiles
     And it is Bob's turn to discard
     When Bob discards
@@ -16,13 +15,12 @@ Feature: Players discarding tiles
     And the discard has gained 1 tile
 
   Scenario: Tiles are available in the player's hand and cannot be discarded out of turn
-    Given a discard with 0 tiles
-    And a player named Bob
-    And Bob's hand has 14 tiles
+    Given a player named Bob
     And a player named Alice
+    And Bob's hand has 14 tiles
     And it is Alice's turn to discard
     When Bob discards
-    Then an IllegalMove error is thrown saying "Error: Bob discarded during Alice's turn"
+    Then the action is rejected because Bob discarded during Alice's turn
 
   Scenario: Tiles are available in the player's hand and cannot be discarded during draw
     Given a discard with 0 tiles
@@ -30,7 +28,7 @@ Feature: Players discarding tiles
     And Bob's hand has 14 tiles
     And it is Bob's turn to draw
     When Bob discards
-    Then an IllegalMove error is thrown saying "Error: Bob discarded during draw phase"
+    Then the action is rejected because Bob discarded during the draw phase
 
   Scenario: Tiles are not available in the player's hand to discard
     Given a discard with 0 tiles
@@ -38,4 +36,4 @@ Feature: Players discarding tiles
     And Bob's hand has 13 tiles
     And it is Bob's turn to discard
     When Bob discards
-    Then an IllegalMove error is thrown saying "Error: Bob discarded at 13 tiles"
+    Then the action is rejected because Bob discarded at 13 tiles
