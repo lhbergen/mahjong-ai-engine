@@ -83,5 +83,5 @@ Feature: Jokers can act as any tile in a:
     And it is Bob's turn to draw
     When Bob draws
     And Bob declares Mahjong
-    Then the actin is rejected because Bob declared Mahjong without a winning hand
+    Then the action is rejected because Bob declared Mahjong without a winning hand
 
