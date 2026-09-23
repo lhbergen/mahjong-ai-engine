@@ -19,7 +19,7 @@ Feature: Players can call tiles for an exposure
     When Alice discards One Bam
     And Bob calls the discard for a pung
     Then the discard has not gained a tile
-    And Bob has an exposue of a pung of One Bams
+    And Bob has an exposure of a pung of One Bams
 
   Scenario: Tiles are available and can be called for a kong
     Given a player named Bob
@@ -30,7 +30,7 @@ Feature: Players can call tiles for an exposure
     When Alice discards One Bam
     And Bob calls the discard for a kong
     Then the discard has not gained a tile
-    And Bob has an exposue of a kong of One Bams
+    And Bob has an exposure of a kong of One Bams
 
   Scenario: Tiles are available and can be called for a quint
     Given a player named Bob
@@ -42,7 +42,7 @@ Feature: Players can call tiles for an exposure
     When Alice discards One Bam
     And Bob calls the discard for a quint
     Then the discard has not gained a tile
-    And Bob has an exposue of a quint of One Bams
+    And Bob has an exposure of a quint of One Bams
 
   Scenario: Tiles are available and can be called for a sextet
     Given a player named Bob
@@ -54,7 +54,7 @@ Feature: Players can call tiles for an exposure
     When Alice discards One Bam
     And Bob calls the discard for a sextet
     Then the discard has not gained a tile
-    And Bob has an exposue of a sextet of One Bams
+    And Bob has an exposure of a sextet of One Bams
 
   Scenario: Tiles are available and can be called for a single to make mahjong
     Given a player named Bob
